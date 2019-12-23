@@ -12,53 +12,39 @@ namespace ExemplesException
         {
             int i = 0;
 
-            //// Exception
-            //i = Convert.ToInt32(Console.ReadLine());
-
-
-
-
+            // Exemple 1
             try
             {
-                Console.WriteLine("Donnez un nombre : ");
+                Console.Write("Donnez un nombre : ");
                 string nombre = Console.ReadLine();
                 i = int.Parse(nombre);
-                int j = 0;
-                i = i / j;
-                // Console.WriteLine("Fin de traitement");
-            }
+                int j = 10;
+                i = j / i;
 
+                Console.WriteLine(i);
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine(String.Format("il y un erreur : {0}  ", e.Message));
+                
+            }
             catch (FormatException e)
             {
-                // Console.WriteLine("Il y a une erreur dans la saisie du nombre, veuillez entrer un nombre valide");
+                Console.WriteLine("Il y a une erreur dans la saisie du nombre, veuillez entrer un nombre valide");
 
-                // Console.WriteLine(String.Format("il y un erreur : {0}  ", e.Message));
+                Console.WriteLine(String.Format("il y un erreur : {0}  ", e.Message));
                 i = 10;
             }
-            //catch (Exception e)
-            //{
-            //    //Console.WriteLine("Il y a une erreur dans la saisie du nombre, veuillez entrer un nombre valide");
-            //    //Console.WriteLine(String.Format("il y un erreur : {0}  ", e.Message));
-            //}
-            //catch (DivideByZeroException e)
-            //{
-            //    Console.WriteLine(String.Format("il y un erreur : {0}  ", e.Message));
-            //    i = 2;
-            //}
-            //catch (NullReferenceException exception)
-            //{
-            //    Console.WriteLine( String.Format( "il y un erreur : {0}  ", exception.Message));
-            //     i = 10; 
-            //}
-
-            //finally
-            //{
-            //    Console.WriteLine("Fin traitement");
-            //}
+            finally
+            {
+                Console.WriteLine("Fin de programme");
+            }
 
 
+            // Exemple 2
 
-            Console.WriteLine(" i = " + i);
+
+            // Console.WriteLine(" i = " + i);
 
             Console.Read();
         }
